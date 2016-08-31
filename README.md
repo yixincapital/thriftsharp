@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Thrift C# Software Library
 
 License
@@ -24,3 +25,6 @@ Using Thrift with C#
 ====================
 
 Thrift requires Mono >= 1.2.6 or .NET framework >= 3.5
+=======
+# thriftsharp
+>>>>>>> 9380141688f2520124a2407fcead07b24ce97584
