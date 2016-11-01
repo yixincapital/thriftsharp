@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Thrift C# Software Library
 
 License
