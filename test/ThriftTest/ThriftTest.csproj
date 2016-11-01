@@ -81,6 +81,35 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestClient.cs" />
     <Compile Include="TestServer.cs" />
+    <Compile Include="Thrift\Test\Bonk.cs" />
+    <Compile Include="Thrift\Test\Bools.cs" />
+    <Compile Include="Thrift\Test\BoolTest.cs" />
+    <Compile Include="Thrift\Test\CrazyNesting.cs" />
+    <Compile Include="Thrift\Test\EmptyStruct.cs" />
+    <Compile Include="Thrift\Test\GuessProtocolStruct.cs" />
+    <Compile Include="Thrift\Test\Insanity.cs" />
+    <Compile Include="Thrift\Test\LargeDeltas.cs" />
+    <Compile Include="Thrift\Test\ListBonks.cs" />
+    <Compile Include="Thrift\Test\ListTypeVersioningV1.cs" />
+    <Compile Include="Thrift\Test\ListTypeVersioningV2.cs" />
+    <Compile Include="Thrift\Test\NestedListsBonk.cs" />
+    <Compile Include="Thrift\Test\NestedListsI32x2.cs" />
+    <Compile Include="Thrift\Test\NestedListsI32x3.cs" />
+    <Compile Include="Thrift\Test\NestedMixedx2.cs" />
+    <Compile Include="Thrift\Test\Numberz.cs" />
+    <Compile Include="Thrift\Test\OneField.cs" />
+    <Compile Include="Thrift\Test\SecondService.cs" />
+    <Compile Include="Thrift\Test\StructA.cs" />
+    <Compile Include="Thrift\Test\StructB.cs" />
+    <Compile Include="Thrift\Test\ThriftTest.Constants.cs" />
+    <Compile Include="Thrift\Test\ThriftTest.cs" />
+    <Compile Include="Thrift\Test\VersioningTestV1.cs" />
+    <Compile Include="Thrift\Test\VersioningTestV2.cs" />
+    <Compile Include="Thrift\Test\Xception.cs" />
+    <Compile Include="Thrift\Test\Xception2.cs" />
+    <Compile Include="Thrift\Test\Xtruct.cs" />
+    <Compile Include="Thrift\Test\Xtruct2.cs" />
+    <Compile Include="Thrift\Test\Xtruct3.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -129,13 +158,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>rmdir /s /q "$(ProjectDir)gen-csharp"
-del /f /q "$(ProjectDir)ThriftImpl.dll"
-SET OUTPUT_DIR=$(ProjectDir)
-SET THRIFT_FILE=$(ProjectDir)\..\..\..\..\test\ThriftTest.thrift
-for %25%25I in ("%25OUTPUT_DIR%25") do set SHORT_DIR=%25%25~fsI
-for %25%25I in ("%25THRIFT_FILE%25") do set THRIFT_SHORT=%25%25~fsI
-"$(ProjectDir)\..\..\..\..\compiler\cpp\thrift.exe" --gen csharp -o %25SHORT_DIR%25 %25THRIFT_SHORT%25
-$(MSBuildToolsPath)\Csc.exe /t:library /out:"$(ProjectDir)ThriftImpl.dll" /recurse:"$(ProjectDir)gen-csharp"\* /reference:"$(ProjectDir)..\..\src\bin\Debug\Thrift.dll"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
